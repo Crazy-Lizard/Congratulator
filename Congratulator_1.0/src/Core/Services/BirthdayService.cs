@@ -26,6 +26,11 @@ namespace Congratulator_1._0.src.Core.Services
             ));
         }
 
+        public void ImportBirthdays(List<Birthday> birthdays)
+        {
+            _repository.ImportBirthdays(birthdays);
+        }
+
         public void RemoveBirthday(int id)
         {
             var birthday = _repository.ShowBirthdays().FirstOrDefault(birthday => birthday.Id == id);

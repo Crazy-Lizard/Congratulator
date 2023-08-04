@@ -14,5 +14,6 @@ namespace Congratulator_1._0.src.Core.Abstractions
         void AddBirthday(AddBirthdayDto birthday);
         void RemoveBirthday(int id);
         void UpdateBirthday(UpdateBirthdayDto birthday);
+        void ImportBirthdays(List<Birthday> birthdays);
     }
 }

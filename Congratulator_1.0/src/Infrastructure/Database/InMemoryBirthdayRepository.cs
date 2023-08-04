@@ -9,7 +9,7 @@ namespace Congratulator_1._0.src.Infrastructure.Database
 {
     internal class InMemoryBirthdayRepository : IRepository
     {
-        private readonly List<Birthday> _birthdays = new();
+        private List<Birthday> _birthdays = new();
         public InMemoryBirthdayRepository()
         {
             _birthdays.Add(new Birthday(1, "Name1", "Surname1", new DateOnly(2000, 12, 12)));
@@ -21,6 +21,11 @@ namespace Congratulator_1._0.src.Infrastructure.Database
         {
             birthday.Id = _birthdays.Max(b => b.Id) + 1;
             _birthdays.Add(birthday);
+        }
+
+        public void ImportBirthdays(List<Birthday> birthdays)
+        {
+            _birthdays = birthdays;
         }
 
         public void RemoveBirthday(Birthday birthday)
